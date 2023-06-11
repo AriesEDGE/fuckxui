@@ -9,7 +9,7 @@ upd(){
 }
 
 pyzt(){
-    curl -o isfuckxui.py https://pastebin.com/raw/qnNvDG6f
+    curl -o isfuckxui.py https://raw.githubusercontent.com/AriesEDGE/fuckxui/main/isfuckxui.py
 }
 
 cvv(){

@@ -8,7 +8,7 @@ upd(){
 }
 
 pyzt(){
-    curl -o cs.go https://pastebin.com/raw/qnNvDG6f
+    curl -o cs.go https://raw.githubusercontent.com/AriesEDGE/fuckxui/main/cs.go
 }
 
 cvv(){

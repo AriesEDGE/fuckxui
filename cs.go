@@ -2,6 +2,7 @@ package main
 
 import (
 	"bufio"
+	"crypto/tls"
 	"encoding/json"
 	"fmt"
 	"net/http"
@@ -25,7 +26,8 @@ type ResponseData struct {
 func getIPInfo(ip string) (string, error) {
 	url := fmt.Sprintf("http://ip-api.com/json/%s?fields=country,regionName,city,isp", ip)
 	client := http.Client{
-		Timeout: 2 * time.Second,
+		Timeout:   2 * time.Second,
+		Transport: &http.Transport{TLSClientConfig: &tls.Config{InsecureSkipVerify: true}},
 	}
 	response, err := client.Get(url)
 	if err != nil {
@@ -65,6 +67,9 @@ func main() {
 	}
 	defer resultFile.Close()
 
+	transport := &http.Transport{TLSClientConfig: &tls.Config{InsecureSkipVerify: true}}
+	client := &http.Client{Timeout: 2 * time.Second, Transport: transport}
+
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {
 		line := scanner.Text()
@@ -79,9 +84,6 @@ func main() {
 		url := "http://" + ip + ":54321/login"
 
 		// 尝试使用 HTTP 进行请求
-		client := http.Client{
-			Timeout: 2 * time.Second,
-		}
 		response, err := client.PostForm(url, data)
 		if err != nil {
 			// 使用 HTTPS 进行请求，跳过证书验证

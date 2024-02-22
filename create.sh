@@ -10,7 +10,7 @@ upd(){
 
 pyzt(){
     curl -o isfuckxui.py https://raw.githubusercontent.com/AriesEDGE/fuckxui/main/isfuckxui.py
-    curl -o isfuckxui.py https://raw.githubusercontent.com/AriesEDGE/fuckxui/main/create.py
+    curl -o create.py https://raw.githubusercontent.com/AriesEDGE/fuckxui/main/create.py
 }
 
 cvv(){

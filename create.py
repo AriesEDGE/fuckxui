@@ -13,7 +13,7 @@ def create_node(ip, port, login, pushid, pushToken):
     headers_node = {}  #ws头部
 
     #生成uuid
-    UUID_node = uuid.uuid5(uuid.NAMESPACE_URL, "X-UI-Creator")
+    UUID_node = uuid.uuid4()
     port_node = random.randint(2000, 65530)
 
     #自动获取并解析参数

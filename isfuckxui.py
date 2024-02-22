@@ -61,7 +61,7 @@ def process_ip(ip):
             print(ip + ' Def')
 
 if __name__ == "__main__":
-    with open("results.txt", "r") as file:
+    with open("scan.txt", "r") as file:
         ips = [line.split("Host: ")[1].split(" ")[0] for line in file if len(line.split("Host: ")) >= 2]
 
     with ThreadPoolExecutor() as executor:

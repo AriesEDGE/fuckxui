@@ -31,7 +31,7 @@ echo "Enter your IP CIOR!"
 read sbip
 echo "ENTER YOUR MAX FUCKXUI RATE!"
 read fucku
-masscan -p54321 ${sbip} --max-rate ${fucku} -oG results.txt
+masscan -p54321 ${sbip} --max-rate ${fucku} -oG scan.txt
 cvv
 tgbots
 

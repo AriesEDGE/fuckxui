@@ -14,7 +14,7 @@ def create_node(ip, port, login, pushid, pushToken):
 
     #生成uuid
     UUID_node = uuid.uuid4(uuid.NAMESPACE_URL, "X-UI-Creator")
-    port_node = random.randint(2000, 3000)
+    port_node = random.randint(2000, 65530)
 
     #自动获取并解析参数
     login_splited = login.split(':')
@@ -76,7 +76,7 @@ def create_node(ip, port, login, pushid, pushToken):
 
         node_config = {
             "v": "2",
-            "ps": "X-UI Auto Creator",
+            "ps": "X-UI Node",
             "add": ip,
             "port": port_node,
             "id": str(UUID_node),

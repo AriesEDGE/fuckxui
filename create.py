@@ -76,7 +76,7 @@ def create_node(ip, port, login, pushid, pushToken):
 
         node_config = {
             "v": "2",
-            "ps": "X-UI Node",
+            "ps": "X-UI Auto Creator",
             "add": ip,
             "port": port_node,
             "id": str(UUID_node),

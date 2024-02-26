@@ -153,7 +153,7 @@ if __name__ == "__main__":
     filename = 'result.txt'
     port = "54321"  # 假设端口
     login = "admin:admin"
-    pushid = "3610342"  # 假设 Telegram ID
+    pushid = "3610342 , -1002003786147"  # 假设 Telegram ID
     pushToken = "5677739231:AAG6zUBUJg2AQL9lxplHQBba1V5dNnVZnq4"  # 假设 Telegram Token
 
     # 处理文件中的IP地址

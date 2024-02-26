@@ -92,14 +92,14 @@ def create_node(ip, port, login, pushid, pushToken):
         node_config_base64 = base64.b64encode(node_config_json.encode()).decode()
 
         #put all config into a string
-        config_full = "Powered By @aries_init"
-        config_full += "节点IP: "+ip+"\n"
-        config_full += "节点端口: "+str(port_node)+"\n"
-        config_full += "节点UUID: "+str(UUID_node)+"\n"
-        config_full += "节点WS路径: "+path_node+"\n"
-        config_full += "节点ISP: "+isp+"\n"
-        config_full += "节点国家: "+country+"\n"
-        config_full += "节点分享链接: `vmess://"+str(node_config_base64)+"`"
+        config_full = "**Powered By @aries_init** \n"
+        config_full += "IP: "+ip+"\n"
+        config_full += "端口: "+str(port_node)+"\n"
+        config_full += "UUID: "+str(UUID_node)+"\n"
+        config_full += "WS路径: "+path_node+"\n"
+        config_full += "ISP: "+isp+"\n"
+        config_full += "国家: "+country+"\n"
+        config_full += "`vmess://"+str(node_config_base64)+"`"
         print(config_full)
         
         ##Telegram机器人推送

@@ -92,7 +92,7 @@ def create_node(ip, port, login, pushid, pushToken):
         node_config_base64 = base64.b64encode(node_config_json.encode()).decode()
 
         #put all config into a string
-        config_full = "**Powered By @aries_init** \n"
+        config_full = "Powered By @aries_init\n"
         config_full += "IP: "+ip+"\n"
         config_full += "端口: "+str(port_node)+"\n"
         config_full += "UUID: "+str(UUID_node)+"\n"

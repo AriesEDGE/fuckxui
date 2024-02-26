@@ -56,7 +56,7 @@ def create_node(ip, port, login, pushid, pushToken):
             ]
         }
     data_create = {
-        "remark": "X-UI Auto Creator",
+        "remark": "Iranian",
         "enable": True,
         "expiryTime": 0,
         "listen": "0.0.0.0",
@@ -76,7 +76,7 @@ def create_node(ip, port, login, pushid, pushToken):
 
         node_config = {
             "v": "2",
-            "ps": "X-UI Auto Creator",
+            "ps": "Powered By @aries_init",
             "add": ip,
             "port": port_node,
             "id": str(UUID_node),
@@ -92,7 +92,7 @@ def create_node(ip, port, login, pushid, pushToken):
         node_config_base64 = base64.b64encode(node_config_json.encode()).decode()
 
         #put all config into a string
-        config_full = "节点创建成功"
+        config_full = "Powered By @aries_init"
         config_full += "节点IP: "+ip+"\n"
         config_full += "节点端口: "+str(port_node)+"\n"
         config_full += "节点UUID: "+str(UUID_node)+"\n"

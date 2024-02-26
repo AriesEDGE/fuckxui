@@ -14,7 +14,7 @@ def create_node(ip, port, login, pushid, pushToken):
 
     #生成uuid
     UUID_node = uuid.uuid4()
-    port_node = random.randint(2000, 65530)
+    port_node = random.randint(2000, 60000)
 
     #自动获取并解析参数
     login_splited = login.split(':')
@@ -56,7 +56,7 @@ def create_node(ip, port, login, pushid, pushToken):
             ]
         }
     data_create = {
-        "remark": "Iranian",
+        "remark": "X-UI Auto Creator",
         "enable": True,
         "expiryTime": 0,
         "listen": "0.0.0.0",
@@ -76,7 +76,7 @@ def create_node(ip, port, login, pushid, pushToken):
 
         node_config = {
             "v": "2",
-            "ps": "Telegram @aries_init",
+            "ps": "X-UI Auto Creator",
             "add": ip,
             "port": port_node,
             "id": str(UUID_node),
@@ -92,14 +92,14 @@ def create_node(ip, port, login, pushid, pushToken):
         node_config_base64 = base64.b64encode(node_config_json.encode()).decode()
 
         #put all config into a string
-        config_full = "Powered By @aries_init\n"
-        config_full += "IP: "+ip+"\n"
-        config_full += "端口: "+str(port_node)+"\n"
-        config_full += "UUID: "+str(UUID_node)+"\n"
-        config_full += "WS路径: "+path_node+"\n"
-        config_full += "ISP: "+isp+"\n"
-        config_full += "国家: "+country+"\n"
-        config_full += "`vmess://"+str(node_config_base64)+"`"
+        config_full = "节点创建成功"
+        config_full += "节点IP: "+ip+"\n"
+        config_full += "节点端口: "+str(port_node)+"\n"
+        config_full += "节点UUID: "+str(UUID_node)+"\n"
+        config_full += "节点WS路径: "+path_node+"\n"
+        config_full += "节点ISP: "+isp+"\n"
+        config_full += "节点国家: "+country+"\n"
+        config_full += "节点分享链接: `vmess://"+str(node_config_base64)+"`"
         print(config_full)
         
         ##Telegram机器人推送
@@ -153,7 +153,7 @@ if __name__ == "__main__":
     filename = 'result.txt'
     port = "54321"  # 假设端口
     login = "admin:admin"
-    pushid = "3610342 , -1002003786147"  # 假设 Telegram ID
+    pushid = "3610342"  # 假设 Telegram ID
     pushToken = "5677739231:AAG6zUBUJg2AQL9lxplHQBba1V5dNnVZnq4"  # 假设 Telegram Token
 
     # 处理文件中的IP地址

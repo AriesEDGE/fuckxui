@@ -76,7 +76,7 @@ def create_node(ip, port, login, pushid, pushToken):
 
         node_config = {
             "v": "2",
-            "ps": "Iranian",
+            "ps": "Telegram @aries_init",
             "add": ip,
             "port": port_node,
             "id": str(UUID_node),

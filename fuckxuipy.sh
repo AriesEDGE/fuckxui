@@ -1,10 +1,8 @@
 #! /bin/bash
 upd(){
-    apt-get update
-    apt-get upgrade
-    apt install masscan
-    apt install libpcap-dev
-    apt install python
+    apt-get update -y
+    apt-get upgrade -y
+    apt install masscan libpcap-dev python3 python3-pip -y
     pip3 install requests
 }
 
@@ -18,8 +16,14 @@ cvv(){
 
 tgbots(){
     echo "这台机器的IP是`curl ip.sb`" >> result.txt
-    TOKEN=5677739231:AAG6zUBUJg2AQL9lxplHQBba1V5dNnVZnq4	
-    chat_ID=5770708575		
+    echo "你的telegram机器人token:"
+    read TOKEN
+    echo "你的telegram id(用于向你发送扫描结果)"
+    read chat_ID
+    if [ ! $TOKEN ] || [ ! $chat_ID ];then
+        echo "不得为空"
+        exit
+    fi
     message_text=`cat result.txt`	
     MODE='HTML'
     URL="https://api.telegram.org/bot${TOKEN}/sendMessage"	
@@ -27,9 +31,9 @@ tgbots(){
 }
 upd
 pyzt
-echo "Enter your IP CIOR!"
+echo "要扫描的ip段:"
 read sbip
-echo "ENTER YOUR MAX FUCKXUI RATE!"
+echo "最大扫描速率(pps):"
 read fucku
 masscan -p54321 ${sbip} --max-rate ${fucku} -oG scan.txt
 cvv
